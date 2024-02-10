@@ -1,0 +1,54 @@
+
+     <div class="container1">
+        <div class="row1">
+          <div class="colo">
+            <div class="list-box1">
+             <ul>
+                <li class="option" *ngFor="let option of options let i = index" [ngClass]="i == rawValue ? 'bg-primary' : ''" (click)="fn(i)" >{{option.name}}</li>
+            </ul>
+                <hr>
+            <ul>    
+                <li class="option" (click)="fn1()"[ngClass]="seperateRawSelector ? 'bg-primary' : ''" >Separated link</li>
+            </ul> 
+             </div>
+          </div>
+          <div class="colo">
+            <div class="list-box2">
+              <ul>
+                <li class="option" *ngFor="let option of options let i = index"  >{{option.name}}</li>
+            </ul>
+                <hr>
+            <ul>    
+                <li class="option" (click)="fn1()" >Separated link</li>
+            </ul> 
+             </div>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="colo">
+            <div class="list-box1">
+            <input type="text" placeholder="Type To Filter.." (click)="fn2()" (keydown)="onKey($event)" maxlength="25" value="{{options1[rawValue1].name}} ">
+              <hr>
+              <div *ngIf="showDropdown">
+                
+              <ul>
+                <li  class="option" *ngFor="let option1 of options1 let i = index" [ngClass]="options1[i].index ? 'bg-primary' : ''" (click) = "fn4(i)">
+                  {{option1.name}}
+                </li>
+                </ul>
+              
+              </div>
+            </div>
+          </div>
+          <div class="colo">
+            <div class="list-box2">
+            <input type="text" placeholder="Type To Filter.." >
+              <hr>
+              <ul>
+                <li class="option" *ngFor="let option1 of options1 let i = index" >{{option1.name}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>   
+      </div>
+    
