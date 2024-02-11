@@ -36,7 +36,8 @@ margin-bottom: 8px;
     
     
     input {
-        color: rgb(37, 64, 88);
+        
+        color: rgb(239, 240, 240);
         background-color: rgb(4, 21, 36);
         display: flex;
         min-width: 100px;
