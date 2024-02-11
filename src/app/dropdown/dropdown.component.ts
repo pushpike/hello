@@ -12,6 +12,7 @@ export class DropdownComponent {
   public showDropdown : boolean = false;
   public asciiName : any;
    nameUpper : string = "";
+   darkMode : boolean = false;
 options = [
   {name : 'Action'},
   {name : 'Another action'},
@@ -58,6 +59,11 @@ fn4(x : number) {
   this.showDropdown = false;
 }
 
+fn5()
+{
+
+  this.darkMode = !this.darkMode;
+}
 word : any[] = [];
 
 onKey(event: any) {
@@ -65,7 +71,7 @@ onKey(event: any) {
  
  if (event.keyCode > 96 && event.keyCode < 123 ||  64 <event.keyCode  &&  91> event.keyCode || 32 == event.keyCode)
   {
-this.word.push(event.keyCode);
+    this.word.push(event.keyCode);
   }
 
   if (event.keyCode == 8)
@@ -94,7 +100,7 @@ for ( i = 0; i < this.options1.length ; i++)
      const nameUpper  = this.options1[i].name[j].toUpperCase();
     if (this.word[j] != nameUpper.codePointAt(0))
     {
-      console.log("hi");
+    
       this.options1[i].index = true; 
       
     }
